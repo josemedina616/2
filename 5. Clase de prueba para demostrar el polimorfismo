@@ -1,0 +1,42 @@
+// Clase principal para probar el polimorfismo
+public class PruebaDocumentos {
+    public static void main(String[] args) {
+        
+        // Crear instancias de Boleta y Factura
+        Documento boleta1 = new Boleta("2024-01-15", 150.50, "12345678");
+        Documento factura1 = new Factura("2024-01-15", 500.00, "20123456781");
+        Documento boleta2 = new Boleta("2024-01-16", 75.25, "87654321");
+        Documento factura2 = new Factura("2024-01-16", 1200.00, "20123456782");
+        
+        // Demostración del polimorfismo con array
+        System.out.println("=== IMPRIMIENDO DOCUMENTOS (POLIMORFISMO) ===");
+        Documento[] documentos = {boleta1, factura1, boleta2, factura2};
+        
+        for (Documento documento : documentos) {
+            documento.imprimir(); // Llamada polimórfica
+            System.out.println();
+        }
+        
+        // Demostración con lista y diferentes tipos de referencia
+        System.out.println("=== USANDO DIFERENTES REFERENCIAS ===");
+        
+        // Referencia como ComprobanteAbstracto
+        ComprobanteAbstracto comprobante1 = new Boleta("2024-01-17", 200.00, "11223344");
+        ComprobanteAbstracto comprobante2 = new Factura("2024-01-17", 800.00, "20123456783");
+        
+        comprobante1.imprimir();
+        comprobante2.imprimir();
+        
+        // Método que acepta cualquier Documento (polimorfismo en parámetros)
+        System.out.println("=== PROCESAR DOCUMENTOS ===");
+        procesarDocumento(boleta1);
+        procesarDocumento(factura1);
+    }
+    
+    // Método que demuestra polimorfismo en parámetros
+    public static void procesarDocumento(Documento documento) {
+        System.out.println("Procesando documento:");
+        documento.imprimir();
+        System.out.println();
+    }
+}
