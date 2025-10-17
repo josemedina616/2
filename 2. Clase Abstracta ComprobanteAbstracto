@@ -1,0 +1,31 @@
+// Clase abstracta que implementa la interfaz y define atributos comunes
+public abstract class ComprobanteAbstracto implements Documento {
+    protected String fecha;
+    protected double montoTotal;
+    
+    // Constructor
+    public ComprobanteAbstracto(String fecha, double montoTotal) {
+        this.fecha = fecha;
+        this.montoTotal = montoTotal;
+    }
+    
+    // Getters y Setters
+    public String getFecha() {
+        return fecha;
+    }
+    
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+    
+    public double getMontoTotal() {
+        return montoTotal;
+    }
+    
+    public void setMontoTotal(double montoTotal) {
+        this.montoTotal = montoTotal;
+    }
+    
+    // Método abstracto que deben implementar las clases hijas
+    public abstract void imprimir();
+}
