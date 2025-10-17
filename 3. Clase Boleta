@@ -1,0 +1,34 @@
+// Clase concreta que representa una Boleta
+public class Boleta extends ComprobanteAbstracto {
+    private String dni;
+    
+    // Constructor
+    public Boleta(String fecha, double montoTotal, String dni) {
+        super(fecha, montoTotal);
+        this.dni = dni;
+    }
+    
+    // Getter y Setter específico
+    public String getDni() {
+        return dni;
+    }
+    
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+    
+    @Override
+    public void imprimir() {
+        System.out.println("=== BOLETA ===");
+        System.out.println("Fecha: " + fecha);
+        System.out.println("DNI: " + dni);
+        System.out.println("Monto Total: S/ " + montoTotal);
+        System.out.println("Tipo: Boleta Electrónica");
+        System.out.println("=====================");
+    }
+    
+    @Override
+    public String toString() {
+        return "Boleta{fecha='" + fecha + "', montoTotal=" + montoTotal + ", dni='" + dni + "'}";
+    }
+}
