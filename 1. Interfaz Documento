@@ -1,0 +1,4 @@
+// Interfaz que define el contrato para imprimir documentos
+public interface Documento {
+    void imprimir();
+}
