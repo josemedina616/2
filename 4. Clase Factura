@@ -1,0 +1,35 @@
+// Clase concreta que representa una Factura
+public class Factura extends ComprobanteAbstracto {
+    private String ruc;
+    
+    // Constructor
+    public Factura(String fecha, double montoTotal, String ruc) {
+        super(fecha, montoTotal);
+        this.ruc = ruc;
+    }
+    
+    // Getter y Setter específico
+    public String getRuc() {
+        return ruc;
+    }
+    
+    public void setRuc(String ruc) {
+        this.ruc = ruc;
+    }
+    
+    @Override
+    public void imprimir() {
+        System.out.println("=== FACTURA ===");
+        System.out.println("Fecha: " + fecha);
+        System.out.println("RUC: " + ruc);
+        System.out.println("Monto Total: S/ " + montoTotal);
+        System.out.println("IGV (18%): S/ " + (montoTotal * 0.18));
+        System.out.println("Tipo: Factura Electrónica");
+        System.out.println("=====================");
+    }
+    
+    @Override
+    public String toString() {
+        return "Factura{fecha='" + fecha + "', montoTotal=" + montoTotal + ", ruc='" + ruc + "'}";
+    }
+}
